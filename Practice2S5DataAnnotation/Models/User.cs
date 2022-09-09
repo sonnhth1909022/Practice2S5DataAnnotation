@@ -16,9 +16,11 @@ namespace Practice2S5DataAnnotation.Models
         public string name { get; set; }
         [DisplayName("Mật khẩu")]
         [Required(ErrorMessage = "Mật khẩu không được để trống")]
+        [DataType(DataType.Password)]
         [StringLength(250, MinimumLength = 5, ErrorMessage = "Mật khẩu phải có ít nhất 5 kí tự")]
         public string password { get; set; }
         [DisplayName("Xác nhận mật khẩu")]
+        [DataType(DataType.Password)]
         [Compare("password", ErrorMessage = "Mật khẩu xác nhận không giống với mật khẩu gốc!")]
         public string confirmPassword { get; set; }
         [DisplayName("Email")]
